@@ -1,7 +1,6 @@
 /** @jsxImportSource solid-js */
 import { createSignal, onCleanup, onMount } from "solid-js";
 import { classify, MoodResult } from "../hooks/useModel";
-import React from "react";
 
 interface CameraInputProps {
   onResult: (result: MoodResult) => void;

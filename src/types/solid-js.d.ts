@@ -1,12 +1,12 @@
-declare module 'solid-js' {
-  export function createSignal<T>(initial: T): [() => T, (v: T) => void];
-  export function onCleanup(fn: () => void): void;
+declare module "solid-js" {
+  export function createSignal<T>(value: T): [() => T, (v: T) => void];
   export function onMount(fn: () => void): void;
+  export function onCleanup(fn: () => void): void;
+  export function createEffect(fn: () => void): void;
+}
 
-  // minimal jsx types to satisfy TSX parsing
-  export namespace JSX {
-    interface IntrinsicElements {
-      [tag: string]: any;
-    }
+declare namespace JSX {
+  interface IntrinsicElements {
+    [elemName: string]: any;
   }
 } 
