@@ -1,0 +1,18 @@
+/* Global styles */
+
+/* Only apply blur on engines that can do it cheaply */
+@supports ((-webkit-backdrop-filter:blur(8px)) or (backdrop-filter:blur(8px))) {
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    backdrop-filter: blur(8px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: none;
+  }
+} 
